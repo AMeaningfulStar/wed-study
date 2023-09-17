@@ -5,35 +5,26 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const array = Array.from({ length: 50 }, (_, index) => index + 1);
+
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center">
-      <Link href={'/project01'} >
-        하하
-      </Link>
+    <div className="w-full h-screen flex flex-col justify-center items-center gap-4">
+      <span className='text-3xl font-bold'>50개의 웹 프로젝트</span>
+      <div className='w-4/5 h-3/4 flex flex-wrap justify-center items-center gap-x-5'>
+        {
+          array.map((btnNumber) => (
+            <Link
+              href={`/projects/project_${btnNumber}`}
+              key={btnNumber}  
+            >
+              <div className='bg-amber-400 hover:bg-amber-500 hover:border hover:border-gray-300 flex justify-center w-24 h-11 rounded text-white font-semibold text-sm text-center items-center'>
+                { btnNumber }번 프로젝트
+              </div>
+            </Link>
+          ))
+        }
+      </div>
     </div>
   )
 }
 
-{/* <div className="flex flex-col items-center justify-between w-[430px] gap-4">
-        <span className="font-bold text-2xl">
-          How do you want your project to be?
-        </span>
-        <div className="flex flex-row justify-start gap-4 w-36">
-          <div className="w-[80px] h-[40px] bg-gray-300 rounded-full p-[3px]">
-            <div className="w-[34px] h-[34px] rounded-full bg-white"></div>
-          </div>
-          <span className="leading-[40px]">Good</span>
-        </div>
-        <div className="flex flex-row justify-start gap-4 w-36">
-          <div className="w-[80px] h-[40px] bg-gray-300 rounded-full p-[3px]">
-            <div className="w-[34px] h-[34px] rounded-full bg-white"></div>
-          </div>
-          <span className="leading-[40px]">Cheap</span>
-        </div>
-        <div className="flex flex-row justify-start gap-4 w-36">
-          <div className="w-[80px] h-[40px] bg-gray-300 rounded-full p-[3px]">
-            <div className="w-[34px] h-[34px] rounded-full bg-white"></div>
-          </div>
-          <span className="leading-[40px]">Fast</span>
-        </div>
-      </div> */}

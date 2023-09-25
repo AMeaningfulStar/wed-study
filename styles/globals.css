@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes expand1 {
+  from {
+    flex: 0.5;
+  }
+  to {
+    flex: 5;
+  }
+}
+
+.element_1 {
+  /* 초기 스타일 설정 */
+  flex: 0.5;
+  /* 애니메이션 설정 */
+  animation-name: expand1;
+  animation-duration: 0.7s; /* 애니메이션 지속 시간 */
+  animation-timing-function: ease-in; /* 타이밍 함수 (easing) 설정 */
+  animation-fill-mode: forwards; /* 애니메이션 완료 후 상태 유지 설정 */
+}
+
+@keyframes expand2 {
+  from {
+    flex: 5;
+  }
+  to {
+    flex: 0.5;
+  }
+}
+
+.element_2 {
+  /* 초기 스타일 설정 */
+  flex: 5;
+  /* 애니메이션 설정 */
+  animation-name: expand2;
+  animation-duration: 0.7s; /* 애니메이션 지속 시간 */
+  animation-timing-function: ease-in; /* 타이밍 함수 (easing) 설정 */
+  animation-fill-mode: forwards; /* 애니메이션 완료 후 상태 유지 설정 */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* 텍스트를 초기에 숨깁니다. */
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; /* 애니메이션 끝에 텍스트를 표시합니다. */
+  }
+}
+
+.moveText {
+  opacity: 0;
+  /* 텍스트에 대한 애니메이션 설정 */
+  animation-name: fadeIn;
+  animation-duration: 0.7s; /* 애니메이션 지속 시간 */
+  animation-timing-function: ease-in; /* 타이밍 함수 (easing) 설정 */
+  animation-fill-mode: forwards; /* 애니메이션 완료 후 상태 유지 설정 */
+}
